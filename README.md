@@ -22,4 +22,8 @@ var success = function (data) {
         console.log("succes");
 }
 cordova.plugins.DownloadManager.download("Your URL to download","fileName", success, fail);
+<<<<<<< HEAD
  ```
+=======
+ ```
+>>>>>>> e0523e302d61da9ac4daece3b6a8f2304e700503
