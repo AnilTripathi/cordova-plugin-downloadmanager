@@ -32,13 +32,7 @@ public class DownloadManager extends CordovaPlugin {
 
     private void startDownload(String message,String fName, CallbackContext callbackContext) {
         if (message != null && message.length() > 0) {
-            String filename = fName;//message.substring(message.lastIndexOf("/")+1, message.length());
-            /*try {
-                filename = URLDecoder.decode(filename,"UTF-8");
-            } catch (UnsupportedEncodingException e) {
-
-                callbackContext.error("Error in converting filename");
-            }*/
+            String filename = fName;
             android.app.DownloadManager downloadManager = (android.app.DownloadManager) cordova.getActivity().getApplicationContext().getSystemService(Context.DOWNLOAD_SERVICE);            
             Uri Download_Uri = Uri.parse(message);
             android.app.DownloadManager.Request request = new android.app.DownloadManager.Request(Download_Uri);
@@ -55,6 +49,7 @@ public class DownloadManager extends CordovaPlugin {
             //Set visiblity after download is complete
             request.setNotificationVisibility(android.app.DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
             long downloadReference = downloadManager.enqueue(request);
+            message="File downloaded successfully";
             callbackContext.success(message);
         } else {
             callbackContext.error("Expected one non-empty string argument.");
