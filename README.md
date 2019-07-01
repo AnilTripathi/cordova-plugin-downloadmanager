@@ -25,9 +25,6 @@ cordova.plugins.DownloadManager.download("Your URL to download", success, fail);
  ```
 
 ## Result
-
-![screenshot](./screenshot/downloadplugin.gif)
-
 _**If this plugin helps your project then don't forget to ⭐ star the repo.**_
 
 ## Contributing
